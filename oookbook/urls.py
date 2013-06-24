@@ -1,10 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url, include
 
 from oookbook import views
+from oookbook.api import v1_api
 
 urlpatterns = patterns('',
+    url(r'^api/', include(v1_api.urls)),
     url(r'^$', views.index, name='index')
-    # Examples:
-    # url(r'^$', 'oookbooksite.views.home', name='home'),
-    # url(r'^oookbooksite/', include('oookbooksite.foo.urls')),
 )
