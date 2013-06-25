@@ -4,12 +4,20 @@
     <h2>List of Users</h2>
 
     <table class="table table-bordered">
-    {% for user in users %}
-        <tr>
-            <td><a href="{% url 'users.show' user.id %}">{{ user.username }}</a></td>
-            <td>{{ user.first_name }}</td>
-            <td>{{ user.last_name }}</td>
-        </tr>
-    {% endfor %}
+        <thead>
+            <tr>
+                <th>User name</th>
+                <th>First name</th>
+                <th>Surname</th>
+            </tr>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td><a href="{% url 'users.show' user.id %}">{{ user.username }}</a></td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
     </table>
 {% endblock %}

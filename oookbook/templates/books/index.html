@@ -1,7 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for book in books %}
-        <a href="{% url 'books.show' book.id %}">{{ book }}</a>
-    {% endfor %}
+    <h2>List of Books</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Author</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.author }}
+                <td><a href="{% url 'books.show' book.id %}">{{ book.title }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
