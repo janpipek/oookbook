@@ -3,6 +3,10 @@
 {% block content %}
     <h2>List of Books</h2>
 
+    <div class="btn-toolbar">
+        <a href="{% url 'books.new' %}" class="btn">Add new book</a>
+    </div>
+
     <table class="table table-bordered">
         <thead>
             <tr>
