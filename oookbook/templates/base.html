@@ -12,8 +12,21 @@
 </head>
 <body>
     <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">OookBook</a>
+                <ul class="nav">
+                    <li><a href="{% url 'books.index' %}">Books</a></li>
+                    <li><a href="{% url 'users.index' %}">People</a></li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
         <div class="row">
-            {% block content %}{% endblock %}
+            <div>
+                {% block content %}{% endblock %}
+            </div>
         </div>
     </div>
 </body>
