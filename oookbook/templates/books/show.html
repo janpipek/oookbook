@@ -1,2 +1,9 @@
-<title>{{ book }}</title>
-<h2>{{ book }}
+{% extends "base.html" %}
+
+{% block title %}
+    Oookbook - {{ book }}
+{% endblock %}
+
+{% block content %}
+    {{ book }}
+{% endblock %}

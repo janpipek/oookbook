@@ -2,6 +2,6 @@
 
 {% block content %}
     {% for book in books %}
-        <li>{{ book }}</li>
+        <a href="{% url 'books.show' book.id %}">{{ book }}</a>
     {% endfor %}
 {% endblock %}
