@@ -1,8 +1,7 @@
-<html>
-<head>
-    <title>Books</title>
-</head>
-<body>
-    List of books
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    {% for book in books %}
+        <li>{{ book }}</li>
+    {% endfor %}
+{% endblock %}
