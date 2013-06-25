@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Oookbook - Add New Book
+{% endblock %}
+
+{% block content %}
+    <h2>Add new book</h2>
+
+    <form action="{% url 'books.index' %}" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+{% endblock %}
