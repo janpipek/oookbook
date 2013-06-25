@@ -10,6 +10,10 @@ urlpatterns = patterns('',
     # Home page of the application
     url(r'^$', views.index, name='index'),
 
+    # Login / logout
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
+    url(r'^accounts/logout/$', views.logout, name = 'logout'),
+
     # Books
     url(r'^books/?$', views.books.index, name='books.index'),
     url(r'^books/(\d+)/?', views.books.show, name='books.show'),
