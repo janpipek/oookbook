@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django.forms import ModelForm
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+
 from oookbook.models import Book
 
 class BookForm(ModelForm):
@@ -8,6 +10,7 @@ class BookForm(ModelForm):
         model = Book
         fields = ['title', 'author', 'note']
 
+@login_required
 def index(request):
     if request.method == 'GET':
         books = Book.objects.all().order_by('title')[:20]
@@ -25,11 +28,13 @@ def index(request):
                 'form': form,
             })
 
+@login_required
 def show(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     context = {'book' : book}
     return render(request, 'books/show.html', context)
 
+@login_required
 def new(request):
     context = { "form" : BookForm() }
     return render(request, 'books/new.html', context)
