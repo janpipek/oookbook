@@ -11,16 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/application.css' %}" />
 </head>
 <body>
-    <div class="navbar navbar-fixed-top" >
-        <div class="navbar-inner" style="padding-left: 10px">
-            <a class="brand" href="{% url 'index' %}">OookBook</a>
-            <ul class="nav">
-                <li><a href="{% url 'books.index' %}">Books</a></li>
-                <li><a href="{% url 'users.index' %}">People</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-            </ul>
-        </div>
-    </div>
+    {% include "_navbar.html" %}
 
     <div class="container" id="content">      
         <div class="row">
