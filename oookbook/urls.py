@@ -11,8 +11,9 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
 
     # Login / logout
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
-    url(r'^accounts/logout/$', views.logout, name = 'logout'),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', views.logout, name = 'logout'),
+    url(r'^welcome/$', views.welcome, name = 'welcome'),
 
     # Books
     url(r'^books/?$', views.books.index, name='books.index'),

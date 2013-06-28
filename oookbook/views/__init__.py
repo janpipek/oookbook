@@ -13,3 +13,7 @@ def index(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/')
+
+def welcome(request):
+    context = {}
+    return render(request, 'welcome.html', context)
