@@ -17,6 +17,7 @@ def index(request):
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit = False)
+            book.user = request.user
             book.save()
             return HttpResponseRedirect('/books/')
         else:

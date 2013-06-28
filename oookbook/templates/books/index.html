@@ -12,6 +12,7 @@
             <tr>
                 <th>Author</th>
                 <th>Title</th>
+                <th>Owner</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
             <tr>
                 <td>{{ book.author }}
                 <td><a href="{% url 'books.show' book.id %}">{{ book.title }}</a></td>
+                <td>{{ book.user.username }}</td>
             </tr>
         {% endfor %}
         </tbody>
