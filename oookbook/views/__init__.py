@@ -6,8 +6,13 @@ from django.http import HttpResponseRedirect
 import books
 import users
 
+from oookbook.models import Book
+from django.contrib.auth.models import User
+
 def index(request):
     context = {}
+    context["user_count"] = User.objects.count()
+    context["book_count"] = Book.objects.count()
     return render(request, 'index.html', context)
 
 def logout(request):
