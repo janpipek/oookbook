@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 # Import all modules to be exported
 import books
 import users
+import loans
 
 from oookbook.models import Book
 from django.contrib.auth.models import User

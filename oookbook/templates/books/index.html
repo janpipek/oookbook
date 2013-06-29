@@ -13,6 +13,7 @@
                 <th>Author</th>
                 <th>Title</th>
                 <th>Owner</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,11 @@
                 <td>{{ book.author }}
                 <td><a href="{% url 'books.show' book.id %}">{{ book.title }}</a></td>
                 <td>{{ book.user.username }}</td>
+                <td>
+                    {% ifnotequal book.user user %}
+                        <a href="{% url 'books.borrow' book.id %}" class="btn btn-small">Borrow</a>
+                    {% endifnotequal %}
+                </td>
             </tr>
         {% endfor %}
         </tbody>

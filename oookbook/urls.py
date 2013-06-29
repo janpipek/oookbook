@@ -16,10 +16,11 @@ urlpatterns = patterns('',
     url(r'^welcome/$', views.welcome, name = 'welcome'),
 
     # Books
-    url(r'^books/?$', views.books.index, name='books.index'),
-    url(r'^books/(\d+)/?', views.books.show, name='books.show'),
-    url(r'^books/new', views.books.new, name='books.new'),
+    url(r'^books/$', views.books.index, name='books.index'),
+    url(r'^books/(\d+)/$', views.books.show, name='books.show'),
+    url(r'^books/(?P<book_id>\d+)/borrow/$', views.loans.borrow, name='books.borrow'),
+    url(r'^books/new/$', views.books.new, name='books.new'),
 
-    url(r'^users/?$', views.users.index, name='users.index'),  
-    url(r'^users/(\d+)/?', views.users.show, name='users.show'),
+    url(r'^users/$', views.users.index, name='users.index'),  
+    url(r'^users/(\d+)/$', views.users.show, name='users.show'),
 )
