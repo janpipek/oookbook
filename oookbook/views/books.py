@@ -13,10 +13,11 @@ class BookForm(ModelForm):
 @login_required
 def index(request):
     if request.method == 'GET':
-        books = Book.objects.all().order_by('title')[:20]
+        books = Book.objects.all().order_by('title')[:200]
         context = {'books' : books}
         return render(request, 'books/index.html', context)
     else:
+        # Create
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit = False)
@@ -30,11 +31,20 @@ def index(request):
 
 @login_required
 def show(request, book_id):
-    book = get_object_or_404(Book, pk=book_id)
-    context = {'book' : book}
-    return render(request, 'books/show.html', context)
+    if request.method == 'GET':
+        book = get_object_or_404(Book, pk=book_id)
+        context = {'book' : book}
+        return render(request, 'books/show.html', context)
+    else:
+        # Update
+        pass
 
 @login_required
 def new(request):
     context = { "form" : BookForm() }
     return render(request, 'books/new.html', context)
+
+@login_required
+def edit(request, book_id):
+    # TODO: Implement
+    pass
