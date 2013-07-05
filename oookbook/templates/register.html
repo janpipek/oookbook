@@ -6,9 +6,13 @@
     <div class="span4 offset4 text-center">
 		<h3>Please, register to Oookbook.</h3>
 
+        {% if form.errors %}
+            <p class='alert'>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
     	<form method="post">
 			{% csrf_token %}
-			{{ form.as_p }}
+			{{ form.as_table }}
 
 			<div class='btn-toolbar'>
 				<input class="btn btn-primary btn-large" type="submit" value="Submit" />

@@ -28,9 +28,15 @@ def welcome(request):
     return render(request, 'welcome.html', context)
 
 def register(request):
-	if request.method == 'GET':
-		context = {}
-		context["form"] = UserCreationForm()
-		return render(request, 'register.html', context)
-	else:
-		raise Exception("Not yet implemented.")
+    if request.method == 'GET':
+        context = {}
+        context["form"] = UserCreationForm()
+        return render(request, 'register.html', context)
+    else:
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+        else:
+            context["form"] = UserCreationForm()
+            return render(request, 'register.html', context)
