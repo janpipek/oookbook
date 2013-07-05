@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class UserProfile(models.Model):
+    user = models.ForeignKey(User, unique=True)
+
+# http://www.turnkeylinux.org/blog/django-profile
+User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
+
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=200)
