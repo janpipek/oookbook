@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="span4 offset4 text-center">
+		<h3>Please, register to Oookbook.</h3>
+
+    	<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+
+			<div class='btn-toolbar'>
+				<input class="btn btn-primary btn-large" type="submit" value="Submit" />
+			</div>
+		</form>
+    </div>
+</div>
+		
+{% endblock %}
