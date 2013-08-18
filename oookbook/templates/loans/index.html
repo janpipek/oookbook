@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Your loan requests</h2>
+
+    <table class="table">
+        {% for loan in loans %}
+        <tr>
+            <td>{{ loan.book.title }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3></h3>
+
+    <h3></h3>
+{% endblock %}

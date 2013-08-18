@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Create a new loan request</h2>
+
+    <p>You are about to borrow a book.</p>
+
+    <h3>Book</h3>
+
+    {% include "books/_box.html" %}
+
+    <h3>Owner</h3>
+
+    {% include "users/_box.html" with user=book.user %}
+
+    <form action="{% url 'loans.index' %}" method="post">{% csrf_token %}
+        <h3>Message</h3>
+        <p>If you want, you can add a message to the owner. This step is not necessary.</p>
+
+        <input type="hidden" name="book_id" value="{{ book.id }}"/>
+
+        <textarea name="message" class="form-control" placeholder="Write a personal message to the owner." rows="4"></textarea>
+
+        <input type="submit" value="Submit" class="btn btn-primary"/>
+    </form>
+    
+
+
+
+
+{% endblock %}
