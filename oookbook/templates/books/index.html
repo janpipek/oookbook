@@ -1,7 +1,11 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
-    <h2>List of Books</h2>
+    <h2>{% trans 'List of Books' %}</h2>
+
+    {% get_current_language as LANGUAGE_CODE %}
+    <!-- Current language: {{ LANGUAGE_CODE }} -->
 
     <div class="btn-toolbar">
         <a href="{% url 'books.new' %}" class="btn">Add new book</a>
@@ -10,8 +14,8 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Author</th>
-                <th>Title</th>
+                <th>{% trans 'Author' %}</th>
+                <th>{% trans 'Title' %}</th>
                 <th>Owner</th>
                 <th></th>
             </tr>
