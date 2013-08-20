@@ -86,6 +86,9 @@ class Loan(models.Model):
         self.log()
         self.save()
 
+    def _get_status_string(self):
+        return Loan.Status.to_str(self.status)
+
 class LoanLog(models.Model):
     loan = models.ForeignKey(Loan, db_index = True)
     user = models.ForeignKey(User, db_index = True)

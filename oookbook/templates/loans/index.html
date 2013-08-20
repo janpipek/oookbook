@@ -3,10 +3,17 @@
 {% block content %}
     <h2>Your loan requests</h2>
 
-    <table class="table">
+    <table class="table table-striped">
+        <tr>
+            <th>Book</th>
+            <th>Owner</th>
+            <th>Status</th>
+        </tr>
         {% for loan in loans %}
         <tr>
-            <td>{{ loan.book.title }}</td>
+            <td>{{ loan.book.title }} <em>by</em> {{ loan.book.author }}</td>
+            <td>{{ loan.book.user.username }}</td>
+            <td>{{ loan.status_string }}</td>
         </tr>
         {% endfor %}
     </table>
