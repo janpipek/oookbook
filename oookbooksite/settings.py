@@ -177,3 +177,7 @@ LOGGING = {
         },
     }
 }
+
+DJANGO_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS' : False,
+}
