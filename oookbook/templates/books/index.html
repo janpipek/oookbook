@@ -16,7 +16,7 @@
             <tr>
                 <th>{% trans 'Author' %}</th>
                 <th>{% trans 'Title' %}</th>
-                <th>Owner</th>
+                <th>{% trans 'Owner' %}</th>
                 <th></th>
             </tr>
         </thead>
@@ -28,7 +28,7 @@
                 <td><a href="{% url 'users.show' user.id %}">{{ book.user.username }}</a></td>
                 <td>
                     {% ifnotequal book.user user %}
-                        <a href="{% url 'loans.new' %}?book_id={{ book.id }}" class="btn btn-small">Borrow</a>
+                        <a href="{% url 'loans.new' %}?book_id={{ book.id }}" class="btn btn-sm btn-primary">{% trans "Borrow" %}</a>
                     {% endifnotequal %}
                 </td>
             </tr>
