@@ -26,7 +26,13 @@
         </ul>
     </div>
 
-    <div class="col-md-3" style="font-size: 120%">
-        Join <a href="{% url 'users.index' %}">{{ user_count }} registered users</a> and borrow one of their <a href="{% url 'books.index' %}">{{ book_count }} books</a>.
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Join us!</div>
+            <div class="panel-body">
+                Join <a href="{% url 'users.index' %}">{{ user_count }} registered users</a> and borrow one of their <a href="{% url 'books.index' %}">{{ book_count }} books</a>.
+            </div>
+
+        </div>
     </div>
 {% endblock %}
