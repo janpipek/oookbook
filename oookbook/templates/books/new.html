@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}
-    Oookbook - Add New Book
+    Oookbook - {% trans "Add new book" %}
 {% endblock %}
 
 {% block content %}
-    <h2>Add new book</h2>
+    <h2>{% trans "Add new book" %}</h2>
 
     <form action="{% url 'books.index' %}" method="post">{% csrf_token %}
         {{ form.as_p }}

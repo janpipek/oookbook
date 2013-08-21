@@ -28,8 +28,8 @@ def welcome(request):
     return render(request, 'welcome.html', context)
 
 def register(request):
+    context = {}
     if request.method == 'GET':
-        context = {}
         context["form"] = UserCreationForm()
         return render(request, 'register.html', context)
     else:

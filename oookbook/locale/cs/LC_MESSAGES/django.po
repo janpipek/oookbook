@@ -33,7 +33,6 @@ msgid "Logout"
 msgstr "Odhlásit se"
 
 #: templates/_navbar.html:13
-#, fuzzy
 msgid "Login"
 msgstr "Přihlásit se"
 
