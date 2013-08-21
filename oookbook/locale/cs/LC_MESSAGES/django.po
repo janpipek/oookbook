@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-20 18:52+0200\n"
+"POT-Creation-Date: 2013-08-21 15:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: C\n"
+
+#: models.py:12
+msgid "title"
+msgstr "název"
+
+#: models.py:13
+msgid "author"
+msgstr "autor"
+
+#: models.py:14
+msgid "note"
+msgstr "poznámka"
 
 #: templates/_navbar.html:8
 msgid "Books"
@@ -36,6 +48,26 @@ msgstr "Odhlásit se"
 msgid "Login"
 msgstr "Přihlásit se"
 
+#: templates/login.html:7
+msgid "Please, log in to continue."
+msgstr ""
+
+#: templates/login.html:16
+msgid "Sign In"
+msgstr ""
+
+#: templates/register.html:7
+msgid "Please, register to Oookbook."
+msgstr "Prosím, registrujte se do Oookbooku."
+
+#: templates/register.html:10
+msgid "Your username and password didn\\'t match. Please try again."
+msgstr ""
+
+#: templates/register.html:18
+msgid "Register"
+msgstr ""
+
 #: templates/books/index.html:5
 msgid "List of Books"
 msgstr "Seznam knih"
@@ -47,3 +79,19 @@ msgstr "Autor"
 #: templates/books/index.html:18
 msgid "Title"
 msgstr "Název"
+
+#: templates/books/new.html:6 templates/books/new.html.py:10
+msgid "Add new book"
+msgstr "Vložení nové knihy"
+
+#: templates/loans/new.html:5
+msgid "Create a new loan request"
+msgstr ""
+
+#: templates/loans/new.html:7
+msgid "You are about to borrow a book."
+msgstr "Chystáte se zapůjčit knihu."
+
+#: templates/loans/new.html:18
+msgid "Include Message"
+msgstr ""

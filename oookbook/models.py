@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
@@ -8,9 +9,9 @@ class UserProfile(models.Model):
 User.profile = property(lambda u: UserProfile.objects.get_or_create(user=u)[0])
 
 class Book(models.Model):
-    title = models.CharField(max_length=100)
-    author = models.CharField(max_length=200)
-    note = models.TextField(blank=True, null=True)
+    title = models.CharField(_("title"), max_length=100)
+    author = models.CharField(_("author"), max_length=200)
+    note = models.TextField(_("note"), blank=True, null=True)
     user = models.ForeignKey(User)
     created_at = models.DateTimeField()
 

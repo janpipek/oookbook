@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url, include
 
 from oookbook import views
 from oookbook.api import v1_api
+from oookbook.forms import LoginForm
 
 urlpatterns = patterns('',
     # All APIs exported by the application
@@ -11,7 +12,7 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
 
     # Login / logout
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='login'),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html', 'authentication_form' : LoginForm }, name='login'),
     url(r'^register/$', views.register, name = 'register'),
     url(r'^logout/$', views.logout, name = 'logout'),
     url(r'^welcome/$', views.welcome, name = 'welcome'),

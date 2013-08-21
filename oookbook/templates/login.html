@@ -1,46 +1,20 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+  <div class="text-center col-md-6 col-md-offset-3">
+      <h3>{% trans "Please, log in to continue." %}</h3>
 
-<div class="row">
-    <div class="span4 offset4 text-center">
-        <h3>Please, log in to continue.</h3>
+      <form class="form-horizontal" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
 
-        {% if form.errors %}
-            <p class='alert'>Your username and password didn't match. Please try again.</p>
-        {% endif %}
+        <input type="hidden" name="next" value="{{ next }}" />
 
-        <form class="form-horizontal" method="post" action="{% url 'login' %}">
-
-          {% csrf_token %}
-          <input type="hidden" name="next" value="{{ next }}" />
-
-          <table class="table-form" style="margin: auto;">
-              <tr>
-                <td>
-                    <label>{{ form.username.label }}</label>
-                </td>
-                <td>
-                     {{ form.username }}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                    <label>{{ form.password.label }}</label>
-                </td>
-                
-                <td class="controls">
-                  {{ form.password }}
-                </td>
-              </tr>
-            </table>
-
-            <div class='btn-toolbar'>
-                <button type="submit" class="btn btn-primary btn-large">Sign in</button>
-            </div>
-        </form>
-    </div>
-</div>
-
+        <div class='btn-toolbar'>
+            <button type="submit" class="btn btn-primary btn-lg">{% trans "Sign In" %}</button>
+        </div>
+      </form>
+  </div>
 {% endblock %}

@@ -2,33 +2,31 @@
 {% load i18n %}
 
 {% block content %}
-    <div class="row-fluid">
-        <div class="span5 offset2">
-            <h1>Welcome to Oookbook</h1>
-            <h3>What is Oookbook?</h3>
+    <div class="col-md-5 col-md-offset-2">
+        <h1>Welcome to Oookbook</h1>
+        <h3>What is Oookbook?</h3>
 
-            <p>A website, where you can post a library catalogue of your <em>paper</em> books,
-                browse through libraries of others and borrow their books. The system
-                tries to be as simple as possible with one-click solution wherever possible.
-            </p>
+        <p>A website, where you can post a library catalogue of your <em>paper</em> books,
+            browse through libraries of others and borrow their books. The system
+            tries to be as simple as possible with one-click solution wherever possible.
+        </p>
 
-            <div class="btn-toolbar text-center">
-                <a href="{% url 'login' %}" class="btn btn-primary btn-large">Sign In</a>
-                <a href="{% url 'register' %}" class="btn btn-success btn-large">Register</a>
-            </div>
-
-            <h3>What is Oookbook <em>not</em>?</h3>
-            <ul>
-                <li>An eBook sharing site.</li>
-                <li>A book selling/buying site.</li>
-                <li>A book database.</li>
-                <li>A book review site.</li>
-                <li>A social network.</li>
-            </ul>
+        <div class="btn-toolbar text-center">
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg js-btn-login">Sign In</a>
+            <a href="{% url 'register' %}" class="btn btn-success btn-lg">Register</a>
         </div>
 
-        <div class="span3">
-            Join <a href="{% url 'users.index' %}">{{ user_count }} registered users</a> and borrow one of their <a href="{% url 'books.index' %}">{{ book_count }} books</a>.
-        </div>
+        <h3>What is Oookbook <em>not</em>?</h3>
+        <ul>
+            <li>An eBook sharing site.</li>
+            <li>A book selling/buying site.</li>
+            <li>A book database.</li>
+            <li>A book review site.</li>
+            <li>A social network.</li>
+        </ul>
+    </div>
+
+    <div class="col-md-3" style="font-size: 120%">
+        Join <a href="{% url 'users.index' %}">{{ user_count }} registered users</a> and borrow one of their <a href="{% url 'books.index' %}">{{ book_count }} books</a>.
     </div>
 {% endblock %}
