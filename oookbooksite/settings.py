@@ -140,7 +140,8 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'tastypie',
     'debug_toolbar',
-    'oookbook'
+    'oookbook',
+    'crispy_forms'
 )
 
 LOGIN_URL = '/login'
@@ -178,6 +179,8 @@ LOGGING = {
     }
 }
 
-DJANGO_TOOLBAR_CONFIG = {
+DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS' : False,
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

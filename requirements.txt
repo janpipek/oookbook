@@ -1,3 +1,5 @@
 django
 django-tastypie
 MySQL-python
+django-crispy-forms
+django-debug-toolbar
