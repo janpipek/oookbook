@@ -3,7 +3,7 @@ import os
 
 BASE_DIR = os.path.join(os.path.dirname(__file__), "..")
 
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 
@@ -102,17 +102,16 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
 ROOT_URLCONF = 'oookbooksite.urls'
 
@@ -127,7 +126,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -139,10 +138,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'tastypie',
-    'debug_toolbar',
     'oookbook',
     'crispy_forms'
-)
+]
 
 LOGIN_URL = '/login'
 
@@ -177,10 +175,6 @@ LOGGING = {
             'propagate': True,
         },
     }
-}
-
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS' : False,
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
