@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404, render
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404
+from django.views.generic import DetailView
+from django.core.urlresolvers import reverse
 
 from oookbook.models import Book, Loan, LoanLog
 
@@ -35,4 +35,7 @@ def index(request):
             loan.delete()
             raise
         # Create a new Loan
-        return HttpResponseRedirect('/loans/')
+        return HttpResponseRedirect(reverse('loans.show', args=[loan.pk]))
+
+class LoanDetailView(DetailView):
+    model = Loan
