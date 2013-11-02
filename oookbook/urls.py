@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     # Loans
     url(r'^loans/$', views.loans.index, name='loans.index'),
     url(r'^loans/new/$', views.loans.new, name='loans.new'),
-    url(r'^loans/(\d+)/$', views.loans.LoanDetailView.as_view(), name='loans.show'),
+    url(r'^loans/(?P<pk>\d+)/$', views.loans.LoanDetailView.as_view(), name='loans.show'),
 
     # Users
     url(r'^users/$', views.users.index, name='users.index'),  
