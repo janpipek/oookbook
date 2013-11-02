@@ -6,4 +6,4 @@ mimeparse==0.1.3
 python-dateutil==2.1
 six==1.3.0
 wsgiref==0.1.2
-git+git://github.com/maraujop/django-crispy-forms.git#egg=django-crispy-forms
+django-crispy-forms=1.4.0
